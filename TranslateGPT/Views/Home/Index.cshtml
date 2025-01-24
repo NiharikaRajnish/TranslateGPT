@@ -8,11 +8,18 @@
                 </div>
 
                 <br />
-                <div action="form-group">
+                <div class="form-group">
                     <label for="selectedLanguage">Select language: </label>
-                    <select name="selectedLanguage" id="selectedLanguage" class="form-control" asp-items="ViewBag.Languages">
-                 
-                    </select>
+                        @if (ViewBag.Languages != null)
+    {
+        <select name="selectedLanguage" id="selectedLanguage" class="form-control" asp-items="ViewBag.Languages">
+        </select>
+    }
+    else
+    {
+        <p class="text-danger">Languages not available.</p>
+    }
+         
                 </div>
 
                 <br />

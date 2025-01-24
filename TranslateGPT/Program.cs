@@ -1,10 +1,23 @@
 var builder = WebApplication.CreateBuilder(args);
 
+// Register MongoDB settings
+builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("MongoDbSettings"));
+
+// Register MongoDB service
+builder.Services.AddSingleton<LanguageService>();
+
+// Register services
+builder.Services.AddHttpClient<OpenAIClient>(); // Register OpenAIClient for HTTP calls
+builder.Services.AddSingleton<ApiClientFactory>(); // Register ApiClientFactory as a singleton
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 //Add HttpClient
 builder.Services.AddHttpClient();
+
+
 
 var app = builder.Build();
 
@@ -16,12 +29,15 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
 app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseAuthorization();
 
 app.MapStaticAssets();
+
+
 
 app.MapControllerRoute(
     name: "default",
