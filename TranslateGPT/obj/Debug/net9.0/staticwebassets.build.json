@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0KM/h2aOSu+WtSTas7KwsKs7Oh63w3ekBYRWMLzDy0s=",
+  "Hash": "eDixY54vm9U++OjfL8naFWHAHemNrUUS/cd3CKVMqT8=",
   "Source": "TranslateGPT",
   "BasePath": "_content/TranslateGPT",
   "Mode": "Default",
@@ -1443,6 +1443,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\OneDrive\\Desktop\\TranslateGPT\\TranslateGPT\\wwwroot\\images\\globe.gif",
+      "SourceId": "TranslateGPT",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\OneDrive\\Desktop\\TranslateGPT\\TranslateGPT\\wwwroot\\",
+      "BasePath": "_content/TranslateGPT",
+      "RelativePath": "images/globe#[.{fingerprint}]?.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0vm4u2la8s",
+      "Integrity": "RL3zeYqCEWWV3IMjF3IfvCu/s6qMuszE0vLy6VrNbgk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\globe.gif"
     },
     {
       "Identity": "C:\\Users\\admin\\OneDrive\\Desktop\\TranslateGPT\\TranslateGPT\\wwwroot\\images\\globe.jpg",
@@ -3345,6 +3366,51 @@
       ]
     },
     {
+      "Route": "images/globe.0vm4u2la8s.gif",
+      "AssetFile": "C:\\Users\\admin\\OneDrive\\Desktop\\TranslateGPT\\TranslateGPT\\wwwroot\\images\\globe.gif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2818214"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/gif"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RL3zeYqCEWWV3IMjF3IfvCu/s6qMuszE0vLy6VrNbgk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 24 Jan 2025 20:15:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0vm4u2la8s"
+        },
+        {
+          "Name": "label",
+          "Value": "images/globe.gif"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RL3zeYqCEWWV3IMjF3IfvCu/s6qMuszE0vLy6VrNbgk="
+        }
+      ]
+    },
+    {
       "Route": "images/globe.bz97otdfwk.jpg",
       "AssetFile": "C:\\Users\\admin\\OneDrive\\Desktop\\TranslateGPT\\TranslateGPT\\wwwroot\\images\\globe.jpg",
       "Selectors": [],
@@ -3386,6 +3452,43 @@
         {
           "Name": "integrity",
           "Value": "sha256-uZX1WhfTm/uOrehGcnZzcvE/Y/tUwtPPx7pUNnguleg="
+        }
+      ]
+    },
+    {
+      "Route": "images/globe.gif",
+      "AssetFile": "C:\\Users\\admin\\OneDrive\\Desktop\\TranslateGPT\\TranslateGPT\\wwwroot\\images\\globe.gif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2818214"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/gif"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RL3zeYqCEWWV3IMjF3IfvCu/s6qMuszE0vLy6VrNbgk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 24 Jan 2025 20:15:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RL3zeYqCEWWV3IMjF3IfvCu/s6qMuszE0vLy6VrNbgk="
         }
       ]
     },

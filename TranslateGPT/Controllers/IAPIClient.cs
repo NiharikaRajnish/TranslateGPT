@@ -32,12 +32,14 @@ public class OpenAIClient : IApiClient
     // Implementation of the Translate method using OpenAI's GPT API
     public async Task<string> Translate(string query, string language)
     {
+
         // Define the request payload for OpenAI's API
         var payload = new
         {
-            model = "gpt-4", // GPT model to use
+            model = "gpt-3", // GPT model to use
             messages = new object[]
             {
+                
                 new { role = "system", content = $"Translate to {language}" }, // System message
                 new { role = "user", content = query } // User's input message
             },
@@ -59,6 +61,7 @@ public class OpenAIClient : IApiClient
 
         // Deserialize the JSON response to extract the translated text
         var response = JsonConvert.DeserializeObject<OpenAIResponse>(responseJson);
+        Console.WriteLine(response);
 
         // Return the translated text from the response
         return response?.Choices[0]?.Message?.Content ?? string.Empty;

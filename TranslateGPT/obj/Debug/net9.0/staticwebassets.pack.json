@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\admin\\OneDrive\\Desktop\\TranslateGPT\\TranslateGPT\\wwwroot\\images\\globe.gif",
+      "PackagePath": "staticwebassets\\images\\globe.gif"
+    },
+    {
       "Id": "C:\\Users\\admin\\OneDrive\\Desktop\\TranslateGPT\\TranslateGPT\\wwwroot\\images\\globe.jpg",
       "PackagePath": "staticwebassets\\images\\globe.jpg"
     },
