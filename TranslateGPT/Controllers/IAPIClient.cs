@@ -36,7 +36,7 @@ public class OpenAIClient : IApiClient
         // Define the request payload for OpenAI's API
         var payload = new
         {
-            model = "gpt-3", // GPT model to use
+            model = "gpt-4", // GPT model to use
             messages = new object[]
             {
                 
@@ -58,11 +58,8 @@ public class OpenAIClient : IApiClient
 
         // Read the response as a JSON string
         var responseJson = await responseMessage.Content.ReadAsStringAsync();
-
         // Deserialize the JSON response to extract the translated text
-        var response = JsonConvert.DeserializeObject<OpenAIResponse>(responseJson);
-        Console.WriteLine(response);
-
+         var response = JsonConvert.DeserializeObject<OpenAIResponse>(responseJson);
         // Return the translated text from the response
         return response?.Choices[0]?.Message?.Content ?? string.Empty;
     }

@@ -10,17 +10,6 @@ using Microsoft.Extensions.Options;
 using MongoDB.Driver; 
 using System.Collections.Generic; 
 
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Newtonsoft.Json;
-using System.Diagnostics;
-using System.Text;
-using System.Text.Json.Serialization;
-using TranslateGPT.Models;
-using TranslateGPT.DTOs;
-using Microsoft.Extensions.Options;
-using MongoDB.Driver;
-using System.Collections.Generic;
 
 namespace TranslateGPT.Controllers
 {
@@ -90,6 +79,7 @@ namespace TranslateGPT.Controllers
                 }
                 else
                 {
+
                     ViewBag.Result = translationResult;
                 }
 

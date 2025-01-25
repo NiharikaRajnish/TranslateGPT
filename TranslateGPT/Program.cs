@@ -9,7 +9,7 @@ builder.Services.AddSingleton<LanguageService>();
 // Register services
 builder.Services.AddHttpClient<OpenAIClient>(); // Register OpenAIClient for HTTP calls
 builder.Services.AddSingleton<ApiClientFactory>(); // Register ApiClientFactory as a singleton
-
+builder.Services.AddSingleton<IApiClient, OpenAIClient>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

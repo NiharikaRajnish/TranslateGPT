@@ -1,0 +1,18 @@
+# Use the official .NET runtime image as the base
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+# Use the official .NET SDK image for building the app
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /src
+COPY . .
+RUN dotnet restore "MyDotNetApp.csproj"
+RUN dotnet publish "MyDotNetApp.csproj" -c Release -o /app/publish
+
+# Final stage: use the runtime image
+FROM base AS final
+WORKDIR /app
+COPY --from=build /app/publish .
+ENTRYPOINT ["dotnet", "MyDotNetApp.dll"]
