@@ -13,7 +13,7 @@ builder.Services.AddSingleton<IApiClient, OpenAIClient>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddMemoryCache();
 //Add HttpClient
 builder.Services.AddHttpClient();
 
