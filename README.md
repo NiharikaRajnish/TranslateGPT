@@ -1,100 +1,105 @@
-TranslateGPT
+
+# TranslateGPT
 
 TranslateGPT is a .NET 9 MVC application that leverages OpenAI's API to provide text translation services in multiple languages. The application allows users to input text, select a target language, and receive a translated response. MongoDB is used for managing the list of available languages, and a caching system optimizes database queries for enhanced performance.
 
-Features
+## Features
 
-Translate text using OpenAI's GPT-based translation API.
+- Translate text using OpenAI's GPT-based translation API.
+- Dynamic dropdown for selecting target languages, populated from MongoDB.
+- Input text persistence after submission.
+- Error handling and logging for improved debugging.
+- Memory caching for language data to reduce database reads.
 
-Dynamic dropdown for selecting target languages, populated from MongoDB.
+## Prerequisites
 
-Input text persistence after submission.
+1. **.NET SDK 9.0**: Ensure you have the .NET 9 SDK installed.
+2. **MongoDB**: The application uses MongoDB for storing language data. Make sure MongoDB is installed and running.
+3. **OpenAI API Key**: Obtain an API key from OpenAI to enable translation functionality.
 
-Error handling and logging for improved debugging.
+## Setup
 
-Memory caching for language data to reduce database reads.
+### Step 1: Clone the Repository
 
-Prerequisites
-
-.NET SDK 9.0: Ensure you have the .NET 9 SDK installed.
-
-MongoDB: The application uses MongoDB for storing language data. Make sure MongoDB is installed and running.
-
-OpenAI API Key: Obtain an API key from OpenAI to enable translation functionality.
-
-Setup
-
-Step 1: Clone the Repository
-
+```bash
 git clone https://github.com/yourusername/TranslateGPT.git
 cd TranslateGPT
+```
 
-Step 2: Configure Secrets
+### Step 2: Configure Secrets
 
-Obtain OpenAI API Key
+#### Obtain OpenAI API Key
 
-Visit the OpenAI website and create an account if you don't already have one.
+1. Visit the OpenAI website and create an account if you don't already have one.
+2. Navigate to the API Keys section in your OpenAI account.
+3. Click on "Create new secret key" and copy the generated key.
 
-Navigate to the API Keys section in your OpenAI account.
-
-Click on "Create new secret key" and copy the generated key.
-
-Add OpenAI API Key
+#### Add OpenAI API Key
 
 Use the .NET Secret Manager to store your OpenAI API key securely:
 
+```bash
 dotnet user-secrets init
 dotnet user-secrets set "OpenAI:ApiKey" "<your-openai-api-key>"
+```
 
-Alternatively, you can add it to the appsettings.json file for development purposes (not recommended for production):
+Alternatively, you can add it to the `appsettings.json` file for development purposes (not recommended for production):
 
+```json
 {
   "OpenAI": {
     "ApiKey": "<your-openai-api-key>"
   }
 }
+```
 
-Step 3: Configure MongoDB
+### Step 3: Configure MongoDB
 
-Update the appsettings.json file with your MongoDB connection string:
+Update the `appsettings.json` file with your MongoDB connection string:
 
+```json
 {
   "ConnectionStrings": {
     "MongoDB": "mongodb://localhost:27017"
   },
   "DatabaseName": "TranslateGPT"
 }
+```
 
-Step 4: Install Dependencies
+### Step 4: Install Dependencies
 
 Navigate to the project directory and restore dependencies:
 
+```bash
 dotnet restore
+```
 
-Step 5: Run the Application
+### Step 5: Run the Application
 
 Run the application locally using the following command:
 
+```bash
 dotnet run
+```
 
-The application will be available at https://localhost:5001.
+The application will be available at `https://localhost:5001`.
 
-Key Components
+## Key Components
 
-Controllers
+### Controllers
 
-HomeController.cs: Handles core functionalities including:
+- **HomeController.cs**: Handles core functionalities including:
+  - Fetching the list of languages from MongoDB.
+  - Handling user input and communicating with OpenAI's API.
 
-Fetching the list of languages from MongoDB.
+### Models
 
-Handling user input and communicating with OpenAI's API.
+- **LanguageService**: Interacts with MongoDB to retrieve and cache the list of languages.
+- **ApiClientFactory**: Creates instances of API clients for external communication.
 
-Models
+### Views
 
-LanguageService: Interacts with MongoDB to retrieve and cache the list of languages.
+- **Index.cshtml**: Main interface for inputting text, selecting a language, and displaying the translation.
 
-ApiClientFactory: Creates instances of API clients for external communication.
+---
 
-Views
-
-Index.cshtml: Main interface for inputting text, selecting a language, and displaying the translation.
