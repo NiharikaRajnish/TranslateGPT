@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/cb01f962-8332-40ee-95a4-ca0034a80593/resourceGroups/TranslateGPT_group-b39d/providers/Microsoft.Web/sites/TranslateGPT",
+    "appService.deploySubpath": "."
+}

@@ -85,8 +85,15 @@ private List<string> GetLanguageNames()
         {
             if (string.IsNullOrWhiteSpace(query) || string.IsNullOrWhiteSpace(selectedLanguage))
             {
-                _logger.LogWarning("Query or language selection is empty.");
-                return BadRequest("Please provide both a query and a selected language.");
+                   
+                 // Indicate that the query is invalid
+                ViewBag.IsQueryInvalid = true;
+
+                // Fetch and pass the list of languages back to the view
+                var languageNames = GetLanguageNames();
+                ViewBag.Languages = new SelectList(languageNames);
+
+                return View("Index");
             }
 
             try
@@ -104,10 +111,12 @@ private List<string> GetLanguageNames()
                 }
                 else
                 {
+                    ViewBag.IsQueryInvalid = false;
 
                     ViewBag.Result = translationResult;
                 }
                 ViewBag.InputText = query;
+                 ViewBag.IsQueryInvalid = false;
 
                 // Fetch and pass the list of languages back to the view
                 var languageNames = GetLanguageNames();

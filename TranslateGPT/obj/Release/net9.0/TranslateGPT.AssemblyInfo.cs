@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TranslateGPT")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2bcd6c7d773a0f4a60a07fc3754525e7abdb6d92")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+579aaf9cc901d762f5a2bda216dc52b618ce5181")]
 [assembly: System.Reflection.AssemblyProductAttribute("TranslateGPT")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TranslateGPT")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

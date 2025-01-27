@@ -1,13 +1,27 @@
-﻿﻿<div class="container">
+﻿﻿@{
+    // Use null-coalescing operator to handle null values
+    bool isQueryInvalid = (bool)(ViewBag.IsQueryInvalid ?? false);
+
+}
+
+
+<div class="container">
     <form method="post" action="@Url.Action("OpenAIGPT")">
         <div class="row justify-content-center">
-            <!-- Left Textarea (Query Input) -->
-            <div class="col-md-5">
-                <div class="form-group">
-                    <textarea class="form-control" name="query" id="query" placeholder="Enter your text" rows="10"  value="@ViewBag.InputText"></textarea>
-                </div>
-            </div>
-
+         <!-- Left Textarea (Query Input) -->
+<div class="col-md-5">
+    <div class="form-group">
+        <textarea class="form-control @(isQueryInvalid ? "is-invalid" : "")" 
+                  id="query" 
+                  name="query" 
+                  rows="10" 
+                  placeholder="Enter your text">@ViewBag.InputText</textarea>
+        @if (isQueryInvalid)
+        {
+            <div class="invalid-feedback">Query cannot be empty. Please provide a valid query.</div>
+        }
+    </div>
+</div>
             <!-- Middle Section: Language Dropdown and Translate Button -->
             <div class="col-md-2 d-flex flex-column justify-content-center align-items-center">
                 <div class="form-group">

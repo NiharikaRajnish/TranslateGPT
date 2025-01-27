@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: TranslateGPT
+    env: docker
+    dockerfilePath: ./Docker/Dockerfile
+    plan: free
