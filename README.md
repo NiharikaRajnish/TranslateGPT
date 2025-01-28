@@ -43,7 +43,7 @@ dotnet user-secrets init
 dotnet user-secrets set "OpenAI:ApiKey" "<your-openai-api-key>"
 ```
 
-Alternatively, you can add it to the `appsettings.json` file for development purposes (not recommended for production):
+Alternatively, you can add it to the `appsettings.json` :
 
 ```json
 {
